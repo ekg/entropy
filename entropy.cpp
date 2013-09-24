@@ -6,34 +6,6 @@
 
 using namespace std;
 
-/*
-import math
-from sets import Set
-import sys
-
-st = sys.argv[1]
-
-stList = list(st)
-alphabet = list(Set(stList)) # list of symbols in the string
-
-# calculate the frequency of each symbol in the string
-freqList = []
-for symbol in alphabet:
-    ctr = 0
-    for sym in stList:
-        if sym == symbol:
-            ctr += 1
-    freqList.append(float(ctr) / len(stList))
-
-# Shannon entropy
-ent = 0.0
-for freq in freqList:
-    ent = ent + freq * math.log(freq, 2)
-ent = -ent
-print ent
-
-*/
-
 double entropy(string& st) {
     vector<char> stvec(st.begin(), st.end());
     set<char> alphabet(stvec.begin(), stvec.end());
