@@ -7,8 +7,8 @@
 # So the theoretical limit for data compression:
 # Shannon Entropy of the string * string length
 # FB - 201011291
+
 import math
-from sets import Set
 import sys
 
 st = sys.argv[1]
@@ -19,9 +19,13 @@ st = sys.argv[1]
 #print st
 #print
 stList = list(st)
-alphabet = list(Set(stList)) # list of symbols in the string
+
+alphabet = []
+for i in stList:
+    if i not in alphabet:
+        alphabet.append(i)
 #print 'Alphabet of symbols in the string:'
-#print alphabet
+#print(alphabet)
 #print
 # calculate the frequency of each symbol in the string
 freqList = []
@@ -39,4 +43,5 @@ ent = 0.0
 for freq in freqList:
     ent = ent + freq * math.log(freq, 2)
 ent = -ent
-print ent
+print(ent)
+
